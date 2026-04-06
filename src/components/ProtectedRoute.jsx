@@ -1,16 +1,25 @@
-import { Navigate } from "react-router-dom";
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
-const ProtectedRoute = ({ children }) => {
-  // Check if the VIP Pass exists in local storage
-  const token = localStorage.getItem("pirivena_token");
+// We pass 'children' (the page inside the wrapper) as a prop
+const ProtectedRoute = ({ children, allowedRoles }) => {
+    const token = localStorage.getItem("pirivena_token");
+    
+    // Optional: If you are saving the user's role on login, you can check it here
+    const userRole = localStorage.getItem("user_role"); 
 
-  // If there is no token, kick them to the login page immediately!
-  if (!token) {
-    return <Navigate to="/login" replace />;
-  }
+    // 1. No token? Go to login.
+    if (!token) {
+        return <Navigate to="/login" replace />;
+    }
 
-  // If they have the token, render the page they asked for
-  return children;
+    // 2. Not the right role? Kick them back to the Dashboard.
+    if (allowedRoles && !allowedRoles.includes(userRole)) {
+        return <Navigate to="/" replace />; 
+    }
+
+    // 3. You pass the checks? Render the page!
+    return children;
 };
 
 export default ProtectedRoute;

@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import StudentManagement from './pages/student/StudentManagement';
 import GuardianManagement from './pages/guardian/GuardianManagement';
 import EmployeeManagement from './pages/Employee/EmployeeManagement';
+import UserManagement from './pages/UserManagement';
 import Login from './pages/Login'; // Your new import!
 import ProtectedRoute from './components/ProtectedRoute'; 
 
@@ -33,6 +34,7 @@ const AppLayout = () => {
             {/* PRIVATE ROUTES (Wrapped in the Bouncer) */}
             <Route path="/" element={
               <ProtectedRoute><Dashboard /></ProtectedRoute>
+              
             } />
             <Route path="/student" element={
               <ProtectedRoute><StudentManagement/></ProtectedRoute>
@@ -43,6 +45,8 @@ const AppLayout = () => {
             <Route path='/employee' element={
               <ProtectedRoute><EmployeeManagement/></ProtectedRoute>
             } />
+            <Route path="/users" element={ <ProtectedRoute allowedRoles={['ADMIN', 'PRINCIPAL']}> <UserManagement /> </ProtectedRoute> } />
+            
           </Routes>
         </main>
       </div>
