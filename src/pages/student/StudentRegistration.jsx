@@ -110,7 +110,7 @@ const StudentRegistration = ({
             await Promise.all([
               axios.get("http://localhost:8080/guardian/all"),
               axios.get("http://localhost:8080/student/nikaya/all"),
-              axios.get("http://localhost:8080/academic/grade/all"),
+              axios.get("http://localhost:8080/api/grades"),
               axios.get("http://localhost:8080/student/type/all"),
               axios.get("http://localhost:8080/student/status/all"),
             ]);

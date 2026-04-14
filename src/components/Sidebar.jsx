@@ -4,6 +4,7 @@ import { GraduationCap } from "lucide-react";
 import { ShieldUser } from 'lucide-react';
 import { IdCardLanyard } from 'lucide-react';
 import { CircleUser} from 'lucide-react';
+import { BookOpen , Landmark} from 'lucide-react';
 
 const Sidebar = () => {
   // A helper function to apply active styles using Tailwind
@@ -23,6 +24,8 @@ const Sidebar = () => {
         <NavLink to="/student" className={navLinkClass}><GraduationCap />Student</NavLink>
         <NavLink to="/guardian" className={navLinkClass}><ShieldUser />Guardian</NavLink>
         <NavLink to="/users" className={navLinkClass}><CircleUser />Users</NavLink>
+        <NavLink to="/academic" className={navLinkClass}><BookOpen />Academic</NavLink>
+        <NavLink to="/finance" className={navLinkClass}><Landmark />Finance</NavLink>
 
       </nav>
     </aside>

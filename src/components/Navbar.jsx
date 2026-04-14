@@ -18,6 +18,8 @@ const Navbar = () => {
       case '/employee': return 'Employee Directory';
       case '/guardian': return 'Guardian Records';
       case '/users': return 'System Users';
+      case '/academic': return 'Academic Management';
+      case '/finance': return 'Financial Ledger';
       default: return 'Dashboard';
     }
   };

@@ -6,6 +6,8 @@ import StudentManagement from './pages/student/StudentManagement';
 import GuardianManagement from './pages/guardian/GuardianManagement';
 import EmployeeManagement from './pages/Employee/EmployeeManagement';
 import UserManagement from './pages/UserManagement';
+import AcademicManagement from './pages/academic/AcademicManagement';
+import FinanceManagement from './pages/finance/FinanceManagement';
 import Login from './pages/Login'; // Your new import!
 import ProtectedRoute from './components/ProtectedRoute'; 
 
@@ -46,7 +48,12 @@ const AppLayout = () => {
               <ProtectedRoute><EmployeeManagement/></ProtectedRoute>
             } />
             <Route path="/users" element={ <ProtectedRoute allowedRoles={['ADMIN', 'PRINCIPAL']}> <UserManagement /> </ProtectedRoute> } />
-            
+            <Route path="/academic" element={
+              <ProtectedRoute><AcademicManagement /></ProtectedRoute>
+            } />
+            <Route path="/finance" element={
+              <ProtectedRoute><FinanceManagement /></ProtectedRoute>
+            } />
           </Routes>
         </main>
       </div>
