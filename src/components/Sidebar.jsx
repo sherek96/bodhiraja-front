@@ -1,10 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { CircleUserRound, LayoutDashboard } from 'lucide-react';
-import { GraduationCap } from "lucide-react";
-import { ShieldUser } from 'lucide-react';
-import { IdCardLanyard } from 'lucide-react';
-import { CircleUser} from 'lucide-react';
-import { BookOpen , Landmark} from 'lucide-react';
+import { GraduationCap, ShieldUser, IdCardLanyard, CircleUser, BookOpen, Landmark, LayoutDashboard, CheckSquare } from "lucide-react";
+
 
 const Sidebar = () => {
   // A helper function to apply active styles using Tailwind
@@ -26,6 +22,7 @@ const Sidebar = () => {
         <NavLink to="/users" className={navLinkClass}><CircleUser />Users</NavLink>
         <NavLink to="/academic" className={navLinkClass}><BookOpen />Academic</NavLink>
         <NavLink to="/finance" className={navLinkClass}><Landmark />Finance</NavLink>
+        <NavLink to="/attendance" className={navLinkClass}><CheckSquare />Attendance</NavLink>
 
       </nav>
     </aside>

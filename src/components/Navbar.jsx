@@ -20,6 +20,7 @@ const Navbar = () => {
       case '/users': return 'System Users';
       case '/academic': return 'Academic Management';
       case '/finance': return 'Financial Ledger';
+      case '/attendance': return 'Daily Attendance';
       default: return 'Dashboard';
     }
   };
